@@ -47,5 +47,5 @@ server.listen(PORT, (error) => {
     console.log({ error: "An error occurred while creating server!" });
     return;
   }
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`SayHi server is running at http://localhost:${PORT}`);
 });
