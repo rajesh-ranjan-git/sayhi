@@ -1,7 +1,7 @@
 import React from "react";
 
-function IncomingCall() {
+const IncomingCall = () => {
   return <div>IncomingCall</div>;
-}
+};
 
 export default IncomingCall;

@@ -1,7 +1,7 @@
 import React from "react";
 
-function MessageStatus() {
+const MessageStatus = () => {
   return <div>MessageStatus</div>;
-}
+};
 
 export default MessageStatus;

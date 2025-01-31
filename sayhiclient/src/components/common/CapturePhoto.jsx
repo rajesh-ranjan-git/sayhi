@@ -1,7 +1,7 @@
 import React from "react";
 
-function CapturePhoto() {
+const CapturePhoto = () => {
   return <div>CapturePhoto</div>;
-}
+};
 
 export default CapturePhoto;

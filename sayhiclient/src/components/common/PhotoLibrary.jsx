@@ -1,7 +1,7 @@
 import React from "react";
 
-function PhotoLibrary() {
+const PhotoLibrary = () => {
   return <div>PhotoLibrary</div>;
-}
+};
 
 export default PhotoLibrary;

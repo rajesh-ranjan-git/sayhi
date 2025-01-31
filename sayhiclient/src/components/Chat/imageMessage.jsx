@@ -1,7 +1,7 @@
 import React from "react";
 
-function ImageMessage() {
+const ImageMessage = () => {
   return <div>ImageMessage</div>;
-}
+};
 
 export default ImageMessage;

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useStateProvider } from "@/context/stateContext";
 import Input from "@/components/common/input";
+import Avatar from "@/components/common/avatar";
 
 const Onboarding = () => {
   //   const [{ userInfo }] = useStateProvider();
@@ -24,6 +25,9 @@ const Onboarding = () => {
           {/* {userInfo.name} */}
           <Input name="Display Name" state={name} setState={setName} label />
           <Input name="About" state={about} setState={setAbout} label />
+        </div>
+        <div>
+          <Avatar type="xl" image={image} setImage={setImage} />
         </div>
       </div>
     </div>

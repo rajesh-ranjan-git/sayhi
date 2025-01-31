@@ -1,7 +1,7 @@
 import React from "react";
 
-function MessageBar() {
+const MessageBar = () => {
   return <div>MessageBar</div>;
-}
+};
 
 export default MessageBar;

@@ -1,7 +1,7 @@
 import React from "react";
 
-function VideoCall() {
+const VideoCall = () => {
   return <div>VideoCall</div>;
-}
+};
 
 export default VideoCall;

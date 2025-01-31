@@ -1,7 +1,7 @@
 import React from "react";
 
-function Container() {
+const Container = () => {
   return <div>Container</div>;
-}
+};
 
 export default Container;

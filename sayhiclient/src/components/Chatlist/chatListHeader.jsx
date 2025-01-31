@@ -1,7 +1,7 @@
 import React from "react";
 
-function ChatListHeader() {
+const ChatListHeader = () => {
   return <div>ChatListHeader</div>;
-}
+};
 
 export default ChatListHeader;
