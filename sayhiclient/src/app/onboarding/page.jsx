@@ -15,14 +15,13 @@ const Onboarding = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-panel-header-background w-screen h-screen text-white">
       <div className="flex md:flex-row flex-col justify-center items-center gap-2">
-        <Image src="/sayhi.gif" alt="SayHi" width={300} height={300} />
+        <Image src="/sayhi.gif" alt="SayHi" width={200} height={200} />
         <span className="text-6xl md:text-7xl">SayHi</span>
       </div>
-      <h2 className="text-5xl md:text-7xl"> Create your profile</h2>
+      <h2 className="my-5 text-3xl md:text-5xl"> Create your profile</h2>
       <div className="flex gap-5 mt-6">
-        <div className="flex flex-col justify-center items-center gap-6 mt-5">
+        <div className="flex flex-col justify-center items-center gap-6">
           {/* {userInfo.name} */}
-          Rajesh Ranjan
           <Input name="Display Name" state={name} setState={setName} label />
           <Input name="About" state={about} setState={setAbout} label />
         </div>
