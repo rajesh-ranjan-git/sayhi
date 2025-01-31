@@ -44,7 +44,7 @@ const Avatar = ({ type, image, setImage }) => {
             onMouseLeave={() => setHover(false)}
           >
             <div
-              className={`bg-photopicker-overlay-background top-0 left-0 z-10 absolute flex flex-col justify-center items-center gap-2 rounded-full w-60 h-60 text-center ${
+              className={`bg-photopicker-overlay-background top-0 left-0 z-10 absolute flex flex-col justify-center items-center gap-2 rounded-full w-40 h-40 md:w-60 md:h-60 text-center ${
                 hover ? "visible" : "hidden"
               }`}
               id="contextOpener"
@@ -63,7 +63,7 @@ const Avatar = ({ type, image, setImage }) => {
                 photo
               </span>
             </div>
-            <div className="flex justify-center items-center w-60 h-60">
+            <div className="flex justify-center items-center w-40 md:w-60 h-40 md:h-60">
               <Image src={image} alt="avatar" className="rounded-full" fill />
             </div>
           </div>
