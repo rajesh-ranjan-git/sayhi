@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 // CORS - Cross Origin Resource Sharing
 server.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -35,10 +35,26 @@ server.use(express.urlencoded({ extended: false }));
 server.use("/api", router);
 
 // Server response
+
+// server.get("/", (req, res) => {
+//   return res.json({
+//     message: `SayHi server is running at http://localhost:${PORT}`,
+//   });
+// });
+
 server.get("/", (req, res) => {
-  return res.json({
-    message: `SayHi server is running at http://localhost:${PORT}`,
-  });
+  return res.send(`
+    <div 
+      style=
+        "color:red;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:100%;
+      ">
+      <h1>SayHi server is running!</h1>
+    </div>`);
 });
 
 // Listen to server

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const ContextMenu = ({ options, coordinates, contextMenu, setContextmenu }) => {
+const contextMenu = ({ options, coordinates, contextMenu, setContextmenu }) => {
   const contextMenuRef = useRef(null);
 
   const handleClick = (e, callback) => {
