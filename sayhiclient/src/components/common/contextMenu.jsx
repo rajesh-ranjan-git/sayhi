@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const ContextMenu = ({ options, coordinates, contextMenu, setContextmenu }) => {
   const contextMenuRef = useRef(null);
@@ -8,6 +8,25 @@ const ContextMenu = ({ options, coordinates, contextMenu, setContextmenu }) => {
     setContextmenu(false);
     callback();
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (e.target.id !== "contextOpener") {
+        if (
+          contextMenuRef.current &&
+          !contextMenuRef.current.contains(e.target)
+        ) {
+          setContextmenu(false);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   return (
     <div

@@ -1,4 +1,6 @@
 import "./globals.css";
+import { StateProvider } from "@/context/stateContext";
+import reducer, { initialState } from "@/context/stateReducers";
 
 export const metadata = {
   title: "SayHi",
@@ -8,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* <StateProvider initialState={initialState} reducer={reducer}> */}
+        {children}
+        {/* </StateProvider> */}
+      </body>
     </html>
   );
 }
