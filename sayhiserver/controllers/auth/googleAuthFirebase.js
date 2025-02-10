@@ -9,14 +9,20 @@ const googleAuthFirebase = async (req, res) => {
   try {
     const body = req.body;
 
+    console.log("body : ", body);
+
     // Validate request body
     const validator = vine.compile(googleAuthFirebaseSchema);
     const payload = await validator.validate(body);
+
+    console.log("payload : ", payload);
 
     // Check if user already exists
     const findUser = await prisma.users.findUnique({
       where: { email: payload.email },
     });
+
+    console.log("findUser : ", findUser);
 
     if (findUser) {
       // Create payload if user exists
@@ -31,6 +37,8 @@ const googleAuthFirebase = async (req, res) => {
       const token = jwt.sign(payloadData, process.env.JWT_SECRET, {
         expiresIn: "365d",
       });
+
+      console.log("token : ", token);
 
       return res
         .cookie("token", token, { httpOnly: true, secure: true })
@@ -49,6 +57,8 @@ const googleAuthFirebase = async (req, res) => {
       data: payload,
     });
 
+    console.log("user : ", user);
+
     // Check if user is registered successfully
     if (user) {
       const payloadData = {
@@ -62,6 +72,8 @@ const googleAuthFirebase = async (req, res) => {
       const token = jwt.sign(payloadData, process.env.JWT_SECRET, {
         expiresIn: "365d",
       });
+
+      console.log("token : ", token);
 
       // Create cookie
       return res
@@ -86,6 +98,7 @@ const googleAuthFirebase = async (req, res) => {
     });
   } catch (error) {
     // Check for validation error
+    console.log("error : ", error);
     if (error instanceof errors.E_VALIDATION_ERROR) {
       return res.status(400).json({
         status: 400,

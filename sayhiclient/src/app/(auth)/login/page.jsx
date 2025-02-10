@@ -8,6 +8,8 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/firebaseConfig";
 import { useStateProvider } from "@/context/stateContext";
 import { reducerCases } from "@/context/constants";
+import axios from "axios";
+import { FIREBASE_LOGIN_ROUTE } from "@/utils/apiRoutes";
 
 const Login = () => {
   const router = useRouter();
@@ -15,39 +17,47 @@ const Login = () => {
   // const [{}, dispatch] = useStateProvider();
 
   const handleLogin = async () => {
-    // const provider = new GoogleAuthProvider();
-    // const { user } = await signInWithPopup(firebaseAuth, provider);
-    // const {
-    //   user: { displayName: name, email, photoUrl: profileImage },
-    // } = await signInWithPopup(firebaseAuth, provider);
+    const provider = new GoogleAuthProvider();
 
-    // try {
-    //   if (email) {
-    //     const { data } = await axios.post(CHECK_USER_ROUTE, { email });
-    //     console.log("data : ", data);
+    const { user } = await signInWithPopup(firebaseAuth, provider);
+    const name = user.displayName;
+    const email = user.email;
+    const profileImage = user.photoURL;
 
-    //     if (!data.status) {
-    //       dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
-    //       dispatch({
-    //         type: reducerCases.SET_USER_INFO,
-    //         userInfo: {
-    //           name,
-    //           email,
-    //           profileImage,
-    //           status: "",
-    //         },
-    //       });
+    console.log("user : ", user);
 
-    //       router.push("/onboarding");
-    //     }
-    //   }
-    // } catch (error) {
-    //   console.log("error : ", error);
-    // }
+    console.log("name : ", name);
+    console.log("email : ", email);
+    console.log("profileImage : ", profileImage);
 
-    // console.log("user : ", user);
+    try {
+      if (user.email) {
+        const { data } = await axios.post(FIREBASE_LOGIN_ROUTE, {
+          name,
+          email,
+          profileImage,
+        });
+        console.log("data : ", data);
+        if (data.success) {
+          // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
+          // dispatch({
+          //   type: reducerCases.SET_USER_INFO,
+          //   userInfo: {
+          //     name,
+          //     email,
+          //     profileImage,
+          //     status: "",
+          //   },
+          // });
+          console.log("here");
+          router.push("/onboarding");
+        }
+      }
+    } catch (error) {
+      console.log("error : ", error);
+    }
 
-    router.push("/onboarding");
+    // router.push("/onboarding");
   };
 
   return (
@@ -61,7 +71,7 @@ const Login = () => {
         onClick={() => handleLogin()}
       >
         <FcGoogle className="text-4xl" />
-        <span className="text-2xl text-white">Login with Google</span>
+        <span className="text-white text-2xl">Login with Google</span>
       </button>
     </div>
   );
