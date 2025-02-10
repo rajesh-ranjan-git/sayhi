@@ -9,9 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <StateProvider>
-        <body>{children}</body>
-      </StateProvider>
+      <body>
+        <StateProvider>{children}</StateProvider>
+        <div id="photoPickerElement"></div>
+      </body>
     </html>
   );
 }

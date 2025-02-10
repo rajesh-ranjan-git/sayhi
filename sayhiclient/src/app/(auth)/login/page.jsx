@@ -8,11 +8,12 @@ import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/firebaseConfig";
 import { CHECK_USER_ROUTE } from "@/utils/apiRoutes";
+import { useStateProvider } from "@/context/stateContext";
 
 const Login = () => {
   const router = useRouter();
 
-  // const [{}, dispatch] = useStateProvider();
+  const [{}, dispatch] = useStateProvider();
 
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();

@@ -1,21 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaCamera } from "react-icons/fa";
 import ContextMenu from "./contextMenu";
 import PhotoPicker from "./photoPicker";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import PhotoLibrary from "./photoLibrary";
+import CapturePhoto from "./capturePhoto";
 
 const Avatar = ({ type, image, setImage }) => {
   const [hover, setHover] = useState(false);
   const [grabPhoto, setGrabPhoto] = useState(false);
+  const [showPhotoLibrary, setShowPhotoLibrary] = useState(false);
+  const [showCapturePhoto, setShowCapturePhoto] = useState(false);
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [contextMenuCoordinates, setContextMenuCoordinates] = useState({
     x: 0,
     y: 0,
   });
 
+  useEffect(() => {
+    if (grabPhoto) {
+      const data = document.getElementById("photoPicker");
+      data.click();
+      document.body.onfocus = (e) => {
+        setTimeout(() => {
+          setGrabPhoto(false);
+        }, 1000);
+      };
+    }
+  });
+
   const contextMenuOptions = [
-    { name: "Take Photo", callback: () => {} },
-    { name: "Choose from library", callback: () => {} },
+    {
+      name: "Take Photo",
+      callback: () => {
+        setShowCapturePhoto(true);
+      },
+    },
+    {
+      name: "Choose from library",
+      callback: () => {
+        setShowPhotoLibrary(true);
+      },
+    },
     {
       name: "Upload Photo",
       callback: () => {
@@ -30,7 +57,21 @@ const Avatar = ({ type, image, setImage }) => {
     },
   ];
 
-  const photoPickerChange = () => {};
+  const photoPickerChange = async (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    const data = document.createElement("img");
+
+    reader.onload = (e) => {
+      data.src = e.target.result || null;
+      data.setAttribute("data-src", e.target.result);
+    };
+
+    reader.readAsDataURL(file);
+    setTimeout(() => {
+      setImage(data.src);
+    }, 100);
+  };
 
   const showContextMenu = (e) => {
     e.preventDefault();
@@ -43,17 +84,29 @@ const Avatar = ({ type, image, setImage }) => {
       <div className="flex justify-center items-center">
         {type === "sm" && (
           <div className="relative w-10 h-10">
-            <Image src={image} alt="avatar" className="rounded-full" fill />
+            <Image
+              src={image}
+              alt="avatar"
+              className="rounded-full"
+              fill
+              sizes="10"
+            />
           </div>
         )}
         {type === "lg" && (
           <div className="relative w-14 h-14">
-            <Image src={image} alt="avatar" className="rounded-full" fill />
+            <Image
+              src={image}
+              alt="avatar"
+              className="rounded-full"
+              fill
+              sizes="10"
+            />
           </div>
         )}
         {type === "xl" && (
           <div
-            className="relative z-0 cursor-pointer"
+            className="z-0 relative cursor-pointer"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
@@ -91,6 +144,21 @@ const Avatar = ({ type, image, setImage }) => {
           setContextmenu={setIsContextMenuVisible}
         />
       )}
+
+      {showCapturePhoto && (
+        <CapturePhoto
+          setImage={setImage}
+          hideCapturePhoto={setShowCapturePhoto}
+        />
+      )}
+
+      {showPhotoLibrary && (
+        <PhotoLibrary
+          setImage={setImage}
+          hidePhotoLibrary={setShowPhotoLibrary}
+        />
+      )}
+
       {grabPhoto && <PhotoPicker onChange={photoPickerChange} />}
     </>
   );
