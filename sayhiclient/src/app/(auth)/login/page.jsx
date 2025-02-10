@@ -13,13 +13,13 @@ import { useStateProvider } from "@/context/stateContext";
 const Login = () => {
   const router = useRouter();
 
-  const [{ userInfo, newUser }, dispatch] = useStateProvider();
+  // const [{ userInfo, newUser }, dispatch] = useStateProvider();
 
-  useEffect(() => {
-    if (userInfo?.id && !newuser) {
-      router.push("/");
-    }
-  }, [userInfo, newUser]);
+  // useEffect(() => {
+  //   if (userInfo?.id && !newuser) {
+  //     router.push("/");
+  //   }
+  // }, [userInfo, newUser]);
 
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();
@@ -34,16 +34,16 @@ const Login = () => {
         const { data } = await axios.post(CHECK_USER_ROUTE, { email });
 
         if (!data.success) {
-          dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
-          dispatch({
-            type: reducerCases.SET_USER_INFO,
-            userInfo: {
-              name,
-              email,
-              profileImage,
-              status: "",
-            },
-          });
+          // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
+          // dispatch({
+          //   type: reducerCases.SET_USER_INFO,
+          //   userInfo: {
+          //     name,
+          //     email,
+          //     profileImage,
+          //     status: "",
+          //   },
+          // });
 
           router.push("/onboarding");
         }

@@ -17,59 +17,57 @@ const Onboarding = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    if (!newUser && !userInfo?.email) {
-      router.push("/login");
-    } else if (!newUser && userInfo?.email) {
-      router.push("/");
-    }
-  }, [newUser, userInfo, router]);
+  // useEffect(() => {
+  //   if (!newUser && !userInfo?.email) {
+  //     router.push("/login");
+  //   } else if (!newUser && userInfo?.email) {
+  //     router.push("/");
+  //   }
+  // }, [newUser, userInfo, router]);
 
   const onboardUserHandler = async () => {
-    if (validateDetails()) {
-      const email = userInfo.email;
+    // if (validateDetails()) {
+    //   const email = userInfo.email;
+    //   try {
+    //     const { data } = axios.post(ONBOARD_USER_ROUTE, {
+    //       email,
+    //       name,
+    //       about,
+    //       image,
+    //     });
+    //     if (data.success) {
+    //       dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
+    //       dispatch({
+    //         type: reducerCases.SET_USER_INFO,
+    //         userInfo: {
+    //           id: data.id,
+    //           name,
+    //           email,
+    //           profileImage: image,
+    //           status: about,
+    //         },
+    //       });
+    //       router.push("/");
+    //     } else {
+    //       const { id, name, email, profileImage, status } = data;
+    //       dispatch({
+    //         type: reducerCases.SET_USER_INFO,
+    //         userInfo: {
+    //           id,
+    //           name,
+    //           email,
+    //           profileImage,
+    //           status,
+    //         },
+    //       });
+    //       router.push("/");
+    //     }
+    //   } catch (error) {
+    //     console.log("error : ", error);
+    //   }
+    // }
 
-      try {
-        const { data } = axios.post(ONBOARD_USER_ROUTE, {
-          email,
-          name,
-          about,
-          image,
-        });
-
-        if (data.success) {
-          dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
-          dispatch({
-            type: reducerCases.SET_USER_INFO,
-            userInfo: {
-              id: data.id,
-              name,
-              email,
-              profileImage: image,
-              status: about,
-            },
-          });
-
-          router.push("/");
-        } else {
-          const { id, name, email, profileImage, status } = data;
-          dispatch({
-            type: reducerCases.SET_USER_INFO,
-            userInfo: {
-              id,
-              name,
-              email,
-              profileImage,
-              status,
-            },
-          });
-
-          router.push("/");
-        }
-      } catch (error) {
-        console.log("error : ", error);
-      }
-    }
+    router.push("/");
   };
 
   const validateDetails = () => {
