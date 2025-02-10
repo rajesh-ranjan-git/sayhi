@@ -1,14 +1,10 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/firebaseConfig";
-import { useStateProvider } from "@/context/stateContext";
-import { reducerCases } from "@/context/constants";
-import axios from "axios";
 import { CHECK_USER_ROUTE } from "@/utils/apiRoutes";
 
 const Login = () => {
