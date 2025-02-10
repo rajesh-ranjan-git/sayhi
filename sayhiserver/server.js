@@ -36,12 +36,6 @@ server.use("/api", router);
 
 // Server response
 
-// server.get("/", (req, res) => {
-//   return res.json({
-//     message: `SayHi server is running at http://localhost:${PORT}`,
-//   });
-// });
-
 server.get("/", (req, res) => {
   return res.send(`
     <div 
