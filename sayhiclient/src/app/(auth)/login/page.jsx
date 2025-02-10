@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,13 @@ import { useStateProvider } from "@/context/stateContext";
 const Login = () => {
   const router = useRouter();
 
-  const [{}, dispatch] = useStateProvider();
+  const [{ userInfo, newUser }, dispatch] = useStateProvider();
+
+  useEffect(() => {
+    if (userInfo?.id && !newuser) {
+      router.push("/");
+    }
+  }, [userInfo, newUser]);
 
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();
@@ -28,16 +34,16 @@ const Login = () => {
         const { data } = await axios.post(CHECK_USER_ROUTE, { email });
 
         if (!data.success) {
-          // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
-          // dispatch({
-          //   type: reducerCases.SET_USER_INFO,
-          //   userInfo: {
-          //     name,
-          //     email,
-          //     profileImage,
-          //     status: "",
-          //   },
-          // });
+          dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
+          dispatch({
+            type: reducerCases.SET_USER_INFO,
+            userInfo: {
+              name,
+              email,
+              profileImage,
+              status: "",
+            },
+          });
 
           router.push("/onboarding");
         }

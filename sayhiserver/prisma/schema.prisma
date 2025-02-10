@@ -17,7 +17,8 @@ model Users {
   id           Int      @id @default(autoincrement())
   name         String   @db.VarChar(191)
   email        String   @unique @db.VarChar(191)
-  profileImage String?
+  profileImage String   @default("")
+  about        String   @default("")
   created_at   DateTime @default(now())
   updated_at   DateTime @default(now())
 }

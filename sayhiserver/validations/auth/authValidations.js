@@ -3,11 +3,12 @@ import { CustomErrorReporter } from "../CustomErrorReporter.js";
 
 vine.errorReporter = () => new CustomErrorReporter();
 
-// Validation for register schema
-export const registerSchema = vine.object({
+// Validation for onboard user schema
+export const onboardUserSchema = vine.object({
   email: vine.string().email(),
   name: vine.string().minLength(2).maxLength(191),
   profileImage: vine.string().optional(),
+  about: vine.string().optional(),
 });
 
 // Validation for login schema

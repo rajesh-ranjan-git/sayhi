@@ -1,17 +1,16 @@
 import vine, { errors } from "@vinejs/vine";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import prisma from "../../db/db.config.js";
-import { registerSchema } from "../../validations/auth/authValidations.js";
+import { onboardUserSchema } from "../../validations/auth/authValidations.js";
 
-// Register user
+// Onboard user
 
-const register = async (req, res) => {
+const onboardUser = async (req, res) => {
   try {
     const body = req.body;
 
     // Validate request body
-    const validator = vine.compile(registerSchema);
+    const validator = vine.compile(onboardUserSchema);
     const payload = await validator.validate(body);
 
     // Check if user already exists
@@ -27,23 +26,18 @@ const register = async (req, res) => {
       });
     }
 
-    // Encrypt password if user does not exist
-    const salt = bcrypt.genSaltSync(10);
-    payload.password = bcrypt.hashSync(payload.password, salt);
-
-    // Register user
+    // Onboard user
     const user = await prisma.users.create({
       data: payload,
     });
 
-    // Check if user is registered successfully
+    // Check if user is onboarded successfully
     if (user) {
       const payloadData = {
-        id: user.id,
         name: user.name,
         email: user.email,
         profileImage: user.profileImage,
-        role: user.role,
+        about: user.about,
       };
 
       // Issue token to login
@@ -65,7 +59,7 @@ const register = async (req, res) => {
     }
 
     // Check if user is not registered
-    return res.status(400).json({
+    return res.json({
       errors: {
         status: 400,
         success: false,
@@ -92,4 +86,4 @@ const register = async (req, res) => {
   }
 };
 
-export default register;
+export default onboardUser;
