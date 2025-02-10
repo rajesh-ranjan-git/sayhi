@@ -46,6 +46,19 @@ const Login = () => {
           // });
 
           router.push("/onboarding");
+        } else {
+          // const { id, name, email, profileImage, status } = data;
+          // dispatch({
+          //   type: reducerCases.SET_USER_INFO,
+          //   userInfo: {
+          //     id,
+          //     name,
+          //     email,
+          //     profileImage,
+          //     status,
+          //   },
+          // });
+          // router.push("/");
         }
       }
     } catch (error) {
