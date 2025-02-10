@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import axios from "axios";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/firebaseConfig";
