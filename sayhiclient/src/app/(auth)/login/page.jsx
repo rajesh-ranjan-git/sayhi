@@ -24,12 +24,6 @@ const Login = () => {
     const email = user.email;
     const profileImage = user.photoURL;
 
-    console.log("user : ", user);
-
-    console.log("name : ", name);
-    console.log("email : ", email);
-    console.log("profileImage : ", profileImage);
-
     try {
       if (user.email) {
         const { data } = await axios.post(FIREBASE_LOGIN_ROUTE, {
@@ -37,7 +31,7 @@ const Login = () => {
           email,
           profileImage,
         });
-        console.log("data : ", data);
+
         if (data.success) {
           // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
           // dispatch({
@@ -49,7 +43,7 @@ const Login = () => {
           //     status: "",
           //   },
           // });
-          console.log("here");
+
           router.push("/onboarding");
         }
       }
