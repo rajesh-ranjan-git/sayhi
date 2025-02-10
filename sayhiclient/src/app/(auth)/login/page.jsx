@@ -9,7 +9,7 @@ import { firebaseAuth } from "@/utils/firebaseConfig";
 import { useStateProvider } from "@/context/stateContext";
 import { reducerCases } from "@/context/constants";
 import axios from "axios";
-import { FIREBASE_LOGIN_ROUTE } from "@/utils/apiRoutes";
+import { CHECK_USER_ROUTE } from "@/utils/apiRoutes";
 
 const Login = () => {
   const router = useRouter();
@@ -25,14 +25,10 @@ const Login = () => {
     const profileImage = user.photoURL;
 
     try {
-      if (user.email) {
-        const { data } = await axios.post(FIREBASE_LOGIN_ROUTE, {
-          name,
-          email,
-          profileImage,
-        });
+      if (email) {
+        const { data } = await axios.post(CHECK_USER_ROUTE, { email });
 
-        if (data.success) {
+        if (!data.success) {
           // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
           // dispatch({
           //   type: reducerCases.SET_USER_INFO,

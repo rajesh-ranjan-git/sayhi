@@ -6,4 +6,4 @@ export const HOST_URL = `http://localhost:${HOST_PORT}`;
 export const AUTH_ROUTE = `${HOST_URL}/api/auth`;
 export const REGISTER_ROUTE = `${AUTH_ROUTE}/register`;
 export const LOGIN_ROUTE = `${AUTH_ROUTE}/login`;
-export const FIREBASE_LOGIN_ROUTE = `${AUTH_ROUTE}/googleAuthFirebase`;
+export const CHECK_USER_ROUTE = `${AUTH_ROUTE}/checkUser`;

@@ -7,7 +7,6 @@ vine.errorReporter = () => new CustomErrorReporter();
 export const registerSchema = vine.object({
   email: vine.string().email(),
   name: vine.string().minLength(2).maxLength(191),
-  password: vine.string().minLength(6).maxLength(191).confirmed(),
   profileImage: vine.string().optional(),
 });
 
@@ -17,10 +16,7 @@ export const loginSchema = vine.object({
   password: vine.string(),
 });
 
-// Validation for Google Auth Firebase schema
-export const googleAuthFirebaseSchema = vine.object({
+// Validation for checking user
+export const checkUserSchema = vine.object({
   email: vine.string().email(),
-  name: vine.string().minLength(2).maxLength(191),
-  password: vine.string().optional(),
-  profileImage: vine.string().optional(),
 });
