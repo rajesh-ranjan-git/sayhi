@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FaCamera } from "react-icons/fa";
 import ContextMenu from "./contextMenu";
 import PhotoPicker from "./photoPicker";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import PhotoLibrary from "./photoLibrary";
 import CapturePhoto from "./capturePhoto";
 
@@ -86,13 +85,15 @@ const Avatar = ({ type, image, setImage }) => {
       <div className="flex justify-center items-center">
         {type === "sm" && (
           <div className="relative w-10 h-10">
-            <Image
-              src={image}
-              alt="avatar"
-              className="rounded-full"
-              fill
-              sizes="10"
-            />
+            {image && (
+              <Image
+                src={image}
+                alt="avatar"
+                className="rounded-full"
+                fill
+                sizes="10"
+              />
+            )}
           </div>
         )}
         {type === "lg" && (

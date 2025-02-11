@@ -9,17 +9,18 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/firebaseConfig";
 import { CHECK_USER_ROUTE } from "@/utils/apiRoutes";
 import { useStateProvider } from "@/context/stateContext";
+import { reducerCases } from "@/context/constants";
 
 const Login = () => {
   const router = useRouter();
 
-  // const [{ userInfo, newUser }, dispatch] = useStateProvider();
+  const [{ userInfo, newUser }, dispatch] = useStateProvider();
 
-  // useEffect(() => {
-  //   if (userInfo?.id && !newuser) {
-  //     router.push("/");
-  //   }
-  // }, [userInfo, newUser]);
+  useEffect(() => {
+    if (userInfo?.id && !newuser) {
+      router.push("/");
+    }
+  }, [userInfo, newUser]);
 
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();
@@ -34,31 +35,31 @@ const Login = () => {
         const { data } = await axios.post(CHECK_USER_ROUTE, { email });
 
         if (!data.success) {
-          // dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
-          // dispatch({
-          //   type: reducerCases.SET_USER_INFO,
-          //   userInfo: {
-          //     name,
-          //     email,
-          //     profileImage,
-          //     status: "",
-          //   },
-          // });
+          dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
+          dispatch({
+            type: reducerCases.SET_USER_INFO,
+            userInfo: {
+              name,
+              email,
+              profileImage,
+              status: "",
+            },
+          });
 
           router.push("/onboarding");
         } else {
-          // const { id, name, email, profileImage, status } = data;
-          // dispatch({
-          //   type: reducerCases.SET_USER_INFO,
-          //   userInfo: {
-          //     id,
-          //     name,
-          //     email,
-          //     profileImage,
-          //     status,
-          //   },
-          // });
-          // router.push("/");
+          const { id, name, email, profileImage, status } = data;
+          dispatch({
+            type: reducerCases.SET_USER_INFO,
+            userInfo: {
+              id,
+              name,
+              email,
+              profileImage,
+              status,
+            },
+          });
+          router.push("/");
         }
       }
     } catch (error) {

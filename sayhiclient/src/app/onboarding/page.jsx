@@ -7,52 +7,54 @@ import Avatar from "@/components/common/avatar";
 import axios from "axios";
 import { ONBOARD_USER_ROUTE } from "@/utils/apiRoutes";
 import { useRouter } from "next/navigation";
+import { reducerCases } from "@/context/constants";
+import { useStateProvider } from "@/context/stateContext";
 
 const Onboarding = () => {
-  //   const [{ userInfo }] = useStateProvider();
-  //   const [name, setName] = useState(userInfo?.name || "");
-  const [name, setName] = useState("");
+  const [{ userInfo, newUser }] = useStateProvider();
+  const [name, setName] = useState(userInfo?.name || "");
+  // const [name, setName] = useState("");
   const [about, setAbout] = useState("");
   const [image, setImage] = useState("/defaultAvatar.png");
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!newUser && !userInfo?.email) {
-  //     router.push("/login");
-  //   } else if (!newUser && userInfo?.email) {
-  //     router.push("/");
-  //   }
-  // }, [newUser, userInfo, router]);
+  useEffect(() => {
+    if (!newUser && !userInfo?.email) {
+      router.push("/login");
+    } else if (!newUser && userInfo?.email) {
+      router.push("/");
+    }
+  }, [newUser, userInfo, router]);
 
   const onboardUserHandler = async () => {
-    // if (validateDetails()) {
-    //   const email = userInfo.email;
-    //   try {
-    //     const { data } = axios.post(ONBOARD_USER_ROUTE, {
-    //       email,
-    //       name,
-    //       about,
-    //       image,
-    //     });
-    //     if (data.success) {
-    //       dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
-    //       dispatch({
-    //         type: reducerCases.SET_USER_INFO,
-    //         userInfo: {
-    //           id: data.id,
-    //           name,
-    //           email,
-    //           profileImage: image,
-    //           status: about,
-    //         },
-    //       });
-    //       router.push("/");
-    //     }
-    //   } catch (error) {
-    //     console.log("error : ", error);
-    //   }
-    // }
+    if (validateDetails()) {
+      const email = userInfo.email;
+      try {
+        const { data } = axios.post(ONBOARD_USER_ROUTE, {
+          email,
+          name,
+          about,
+          image,
+        });
+        if (data.success) {
+          dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
+          dispatch({
+            type: reducerCases.SET_USER_INFO,
+            userInfo: {
+              id: data.id,
+              name,
+              email,
+              profileImage: image,
+              status: about,
+            },
+          });
+          router.push("/");
+        }
+      } catch (error) {
+        console.log("error : ", error);
+      }
+    }
 
     router.push("/");
   };
@@ -76,7 +78,7 @@ const Onboarding = () => {
           <Avatar type="xl" image={image} setImage={setImage} />
         </div>
         <div className="flex flex-col justify-center items-center gap-6">
-          {/* {userInfo.name} */}
+          {userInfo?.name}
           <Input name="Display Name" state={name} setState={setName} label />
           <Input name="About" state={about} setState={setAbout} label />
           <div className="flex justify-center items-center">
