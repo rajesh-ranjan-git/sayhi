@@ -16,12 +16,6 @@ const Main = () => {
   const router = useRouter();
   const [{ userInfo }, dispatch] = useStateProvider();
 
-  useEffect(() => {
-    if (redirectLogin) {
-      router.push("/login");
-    }
-  }, [redirectLogin]);
-
   onAuthStateChanged(firebaseAuth, async (currentUser) => {
     if (!currentUser) {
       setRedirectLogin(true);
@@ -50,6 +44,12 @@ const Main = () => {
       router.push("/");
     }
   });
+
+  useEffect(() => {
+    if (redirectLogin) {
+      router.push("/login");
+    }
+  }, [redirectLogin]);
 
   return (
     <>

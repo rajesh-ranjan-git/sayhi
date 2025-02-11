@@ -11,32 +11,31 @@ import { reducerCases } from "@/context/constants";
 import { useStateProvider } from "@/context/stateContext";
 
 const Onboarding = () => {
-  const [{ userInfo, newUser }] = useStateProvider();
+  const [{ userInfo, newUser }, dispatch] = useStateProvider();
+
+  console.log("userInfo : ", userInfo);
+  console.log("newUser : ", newUser);
+
   const [name, setName] = useState(userInfo?.name || "");
   // const [name, setName] = useState("");
   const [about, setAbout] = useState("");
-  const [image, setImage] = useState("/defaultAvatar.png");
+  const [image, setImage] = useState(
+    userInfo?.profileImage || "/defaultAvatar.png"
+  );
 
   const router = useRouter();
-
-  useEffect(() => {
-    if (!newUser && !userInfo?.email) {
-      router.push("/login");
-    } else if (!newUser && userInfo?.email) {
-      router.push("/");
-    }
-  }, [newUser, userInfo, router]);
 
   const onboardUserHandler = async () => {
     if (validateDetails()) {
       const email = userInfo.email;
       try {
-        const { data } = axios.post(ONBOARD_USER_ROUTE, {
+        const { data } = await axios.post(ONBOARD_USER_ROUTE, {
           email,
           name,
           about,
-          image,
+          profileImage: image,
         });
+        console.log("data : ", data);
         if (data.success) {
           dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
           dispatch({
@@ -56,7 +55,7 @@ const Onboarding = () => {
       }
     }
 
-    router.push("/");
+    // router.push("/");
   };
 
   const validateDetails = () => {
@@ -66,10 +65,20 @@ const Onboarding = () => {
     return true;
   };
 
+  useEffect(() => {
+    console.log("changed newUser : ", newUser);
+    console.log("changed userInfo : ", userInfo);
+    if (!newUser && !userInfo?.email) {
+      router.push("/login");
+    } else if (!newUser && userInfo?.email) {
+      router.push("/");
+    }
+  }, [newUser, userInfo, router]);
+
   return (
     <div className="flex flex-col justify-center items-center bg-panel-header-background w-screen h-screen text-white">
       <div className="flex md:flex-row flex-col justify-center items-center gap-2">
-        <Image src="/sayhi.gif" alt="SayHi" width={200} height={200} />
+        <Image src="/sayhi.gif" alt="SayHi" width={200} height={200} sizes="" />
         <span className="text-6xl md:text-7xl">SayHi</span>
       </div>
       <h2 className="my-5 text-3xl md:text-5xl"> Create your profile</h2>
@@ -78,7 +87,6 @@ const Onboarding = () => {
           <Avatar type="xl" image={image} setImage={setImage} />
         </div>
         <div className="flex flex-col justify-center items-center gap-6">
-          {userInfo?.name}
           <Input name="Display Name" state={name} setState={setName} label />
           <Input name="About" state={about} setState={setAbout} label />
           <div className="flex justify-center items-center">

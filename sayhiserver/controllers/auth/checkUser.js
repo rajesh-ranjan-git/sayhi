@@ -9,6 +9,8 @@ const checkUser = async (req, res) => {
   try {
     const body = req.body;
 
+    console.log("body : ", body);
+
     // Validate request body
     const validator = vine.compile(checkUserSchema);
     const payload = await validator.validate(body);
@@ -17,6 +19,8 @@ const checkUser = async (req, res) => {
     const findUser = await prisma.users.findUnique({
       where: { email: payload.email },
     });
+
+    console.log("findUser : ", findUser);
 
     if (findUser) {
       // Create payload if user exists
@@ -32,6 +36,8 @@ const checkUser = async (req, res) => {
         expiresIn: "365d",
       });
 
+      console.log("token : ", token);
+
       return res.cookie("token", token, { httpOnly: true, secure: true }).json({
         status: 200,
         success: true,
@@ -43,11 +49,9 @@ const checkUser = async (req, res) => {
 
     // Check if user does not exist
     return res.json({
-      errors: {
-        status: 400,
-        success: false,
-        message: "User not found!",
-      },
+      status: 400,
+      success: false,
+      message: "User not found!",
     });
   } catch (error) {
     // Check for validation error

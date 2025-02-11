@@ -9,6 +9,8 @@ const onboardUser = async (req, res) => {
   try {
     const body = req.body;
 
+    console.log("body : ", body);
+
     // Validate request body
     const validator = vine.compile(onboardUserSchema);
     const payload = await validator.validate(body);
@@ -17,6 +19,8 @@ const onboardUser = async (req, res) => {
     const findUser = await prisma.users.findUnique({
       where: { email: payload.email },
     });
+
+    console.log("findUser : ", findUser);
 
     if (findUser) {
       return res.status(400).json({
@@ -30,6 +34,8 @@ const onboardUser = async (req, res) => {
     const user = await prisma.users.create({
       data: payload,
     });
+
+    console.log("user : ", user);
 
     // Check if user is onboarded successfully
     if (user) {
@@ -60,14 +66,13 @@ const onboardUser = async (req, res) => {
 
     // Check if user is not registered
     return res.json({
-      errors: {
-        status: 400,
-        success: false,
-        message: "Something went wrong while creating user!",
-      },
+      status: 400,
+      success: false,
+      message: "Something went wrong while creating user!",
     });
   } catch (error) {
     // Check for validation error
+    console.log("error : ", error);
     if (error instanceof errors.E_VALIDATION_ERROR) {
       return res.status(400).json({
         status: 400,

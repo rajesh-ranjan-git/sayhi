@@ -34,7 +34,7 @@ const PhotoLibrary = ({ setImage, hidePhotoLibrary }) => {
               }}
             >
               <div className="relative w-24 h-24 cursor-pointer">
-                <Image src={image} alt="avatar" fill />
+                <Image src={image} alt="avatar" fill sizes="" />
               </div>
             </div>
           ))}

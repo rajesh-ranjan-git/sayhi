@@ -134,7 +134,13 @@ const Avatar = ({ type, image, setImage }) => {
               </span>
             </div>
             <div className="flex justify-center items-center w-40 md:w-60 h-40 md:h-60">
-              <Image src={image} alt="avatar" className="rounded-full" fill />
+              <Image
+                src={image}
+                alt="avatar"
+                className="rounded-full"
+                fill
+                sizes=""
+              />
             </div>
           </div>
         )}

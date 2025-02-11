@@ -16,12 +16,6 @@ const Login = () => {
 
   const [{ userInfo, newUser }, dispatch] = useStateProvider();
 
-  useEffect(() => {
-    if (userInfo?.id && !newuser) {
-      router.push("/");
-    }
-  }, [userInfo, newUser]);
-
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();
 
@@ -30,9 +24,15 @@ const Login = () => {
     const email = user.email;
     const profileImage = user.photoURL;
 
+    console.log("name : ", name);
+    console.log("email : ", email);
+    console.log("profileImage : ", profileImage);
+
     try {
       if (email) {
         const { data } = await axios.post(CHECK_USER_ROUTE, { email });
+
+        console.log("data : ", data);
 
         if (!data.success) {
           dispatch({ type: reducerCases.SET_NEW_USER, newUser: true });
@@ -69,10 +69,18 @@ const Login = () => {
     // router.push("/onboarding");
   };
 
+  useEffect(() => {
+    if (userInfo?.id && !newuser) {
+      console.log("userInfo : ", userInfo);
+      console.log("newuser : ", newuser);
+      router.push("/");
+    }
+  }, [userInfo, newUser]);
+
   return (
     <div className="flex flex-col justify-center items-center gap-6 bg-panel-header-background w-screen h-screen">
       <div className="flex justify-center items-center gap-2 text-white">
-        <Image src="/sayhi.gif" alt="SayHi" width={200} height={200} />
+        <Image src="/sayhi.gif" alt="SayHi" width={200} height={200} sizes="" />
         <span className="text-6xl md:text-7xl">SayHi</span>
       </div>
       <button
