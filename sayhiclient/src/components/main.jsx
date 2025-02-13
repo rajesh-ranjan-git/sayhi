@@ -10,6 +10,7 @@ import { CHECK_USER_ROUTE } from "@/utils/apiRoutes";
 import { useRouter } from "next/navigation";
 import { useStateProvider } from "@/context/stateContext";
 import { reducerCases } from "@/context/constants";
+import Chat from "./chat/chat";
 
 const Main = () => {
   const [redirectLogin, setRedirectLogin] = useState(false);
@@ -55,7 +56,8 @@ const Main = () => {
     <>
       <div className="grid md:grid-cols-main w-screen max-w-full h-screen max-h-screen overflow-hidden">
         <ChatList />
-        <Empty />
+        {/* <Empty /> */}
+        <Chat />
       </div>
     </>
   );
