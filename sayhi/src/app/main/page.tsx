@@ -1,7 +1,8 @@
 import BottomNavbar from "@/components/navbar/bottomNavbar";
 import LeftNavbar from "@/components/navbar/leftNavbar";
-import TopNavbar from "@/components/navbar/topNavbar";
+import ChatListTopNavbar from "@/components/navbar/chatListTopNavbar";
 import EmptyMain from "@/components/empty/emptyMain";
+import ChatMainWindow from "@/components/chat/chatMainWindow";
 
 const Main = () => {
   return (
@@ -9,12 +10,14 @@ const Main = () => {
       <section className="hidden md:flex justify-center bg-neutral-800 py-2 w-15 h-screen">
         <LeftNavbar />
       </section>
-      <section className="bg-neutral-700 border-1 border-neutral-800 w-full md:w-96 h-full">
-        <TopNavbar />
+      <section className="bg-neutral-700 border-neutral-800 border-r w-full md:w-96 h-full">
+        <ChatListTopNavbar />
         <BottomNavbar />
       </section>
       <section className="hidden md:flex justify-center items-center bg-neutral-700 w-full h-screen">
-        <EmptyMain />
+        {/* <EmptyMain /> */}
+
+        <ChatMainWindow />
       </section>
     </main>
   );
