@@ -6,11 +6,11 @@ import ChatMainWindow from "@/components/chat/chatMainWindow";
 
 const Main = () => {
   return (
-    <main className="flex justify-center items-center bg-slate-900 w-screen h-screen">
+    <main className="flex justify-center items-center bg-slate-800 w-screen h-screen">
       <section className="hidden md:flex justify-center bg-neutral-800 py-2 w-15 h-screen">
         <LeftNavbar />
       </section>
-      <section className="bg-neutral-700 border-neutral-800 border-r w-full md:w-96 h-full">
+      <section className="bg-neutral-700 border-neutral-800 border-r rounded-tl-lg w-full md:w-[40vw] h-full">
         <ChatListTopNavbar />
         <BottomNavbar />
       </section>
