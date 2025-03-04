@@ -11,7 +11,7 @@ const ChatMainWindow = () => {
       <div className="relative">
         <MainChatTopNavbar />
       </div>
-      <div className="z-10 flex flex-col justify-center items-center gap-3 bg-transparent w-full">
+      <div className="z-10 flex flex-col justify-center items-center gap-3 bg-transparent w-full h-[90%]">
         <MessageCircle className="text-green-600" size={60} />
         <h3 className="text-white text-3xl">SayHi</h3>
         <p className="flex justify-center items-center gap-2 text-slate-200 text-sm">
