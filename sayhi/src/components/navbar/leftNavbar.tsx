@@ -10,6 +10,12 @@ import {
 import { TbHistoryToggle } from "react-icons/tb";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import SettingsContext from "@/components/context/settingsContext";
 
 const LeftNavbar = () => {
   return (
@@ -45,10 +51,17 @@ const LeftNavbar = () => {
           <Separator className="bg-neutral-600" />
         </div>
         <div className="flex justify-center items-center hover:bg-neutral-600 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <Settings size={20} />
+          <Popover>
+            <PopoverTrigger className="cursor-pointer">
+              <Settings size={20} />
+            </PopoverTrigger>
+            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] h-[50vh]">
+              <SettingsContext />
+            </PopoverContent>
+          </Popover>
         </div>
         <div className="flex justify-center items-center p-2 w-full transition-all ease-in-out cursor-pointer">
-          <Avatar>
+          <Avatar className="cursor-pointer">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>RR</AvatarFallback>
           </Avatar>
