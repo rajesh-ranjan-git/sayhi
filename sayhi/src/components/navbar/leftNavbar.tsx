@@ -70,19 +70,19 @@ const LeftNavbar = () => {
           <div className="p-2">
             <Separator className="bg-neutral-600 w-1/2" />
           </div>
-          <div className="hover:bg-neutral-600 rounded-md w-full">
-            <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-              <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-              <Popover>
-                <PopoverTrigger className="cursor-pointer">
+          <Popover>
+            <PopoverTrigger className="w-full cursor-pointer">
+              <div className="hover:bg-neutral-600 rounded-md w-full">
+                <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
+                  <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
                   <Settings size={20} />
-                </PopoverTrigger>
-                <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] h-[50vh]">
-                  <SettingsContext />
-                </PopoverContent>
-              </Popover>
-            </div>
-          </div>
+                </div>
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] h-[50vh]">
+              <SettingsContext />
+            </PopoverContent>
+          </Popover>
         </div>
         <div className="w-full">
           <div className="flex justify-center items-center p-2 w-full transition-all ease-in-out cursor-pointer">
