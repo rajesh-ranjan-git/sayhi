@@ -10,6 +10,7 @@ import {
   UserRound,
   Video,
 } from "lucide-react";
+import SettingsContextRightContent from "@/components/context/settingsContextRightContent";
 
 const SettingsContext = () => {
   return (
@@ -90,7 +91,7 @@ const SettingsContext = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-neutral-500 rounded-r-md w-[60%] h-full"></div>
+      <SettingsContextRightContent />
     </div>
   );
 };
