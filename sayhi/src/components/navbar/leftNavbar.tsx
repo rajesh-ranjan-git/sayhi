@@ -3,7 +3,6 @@ import {
   Archive,
   MessageCircle,
   MessageSquareText,
-  Monitor,
   Phone,
   Settings,
   Star,

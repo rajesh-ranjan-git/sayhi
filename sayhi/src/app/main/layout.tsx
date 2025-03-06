@@ -1,4 +1,4 @@
-const DashboardLayout = ({
+const MainLayout = ({
   children,
   chatListSection,
   chatMainSection,
@@ -18,4 +18,4 @@ const DashboardLayout = ({
   );
 };
 
-export default DashboardLayout;
+export default MainLayout;

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { RiEnglishInput } from "react-icons/ri";
 import { Globe, IndianRupee, Languages } from "lucide-react";
 import {
@@ -10,7 +11,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import CustomToggle from "@/components/ui/customToggle";
-import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
 const SettingsContextRightContent = () => {

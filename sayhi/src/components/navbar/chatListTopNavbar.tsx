@@ -1,4 +1,4 @@
-import { ListFilter, MessageSquareText, Phone } from "lucide-react";
+import { ListFilter } from "lucide-react";
 import { FaRegEdit } from "react-icons/fa";
 
 const ChatListTopNavbar = () => {

@@ -1,9 +1,19 @@
+"use client";
+
 import { BsPinAngleFill } from "react-icons/bs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useRouter } from "next/navigation";
 
 const ChatListItem = () => {
+  const router = useRouter();
+
   return (
-    <div className="flex items-center gap-3 hover:bg-neutral-600 p-2 py-2 rounded-md w-full transition-all ease-in-out cursor-pointer">
+    <div
+      className="flex items-center gap-3 hover:bg-neutral-600 p-2 py-2 rounded-md w-full transition-all ease-in-out cursor-pointer"
+      onClick={() => {
+        router.push("/main/chatMain");
+      }}
+    >
       <div className="cursor-pointer">
         <Avatar className="w-10 h-10">
           <AvatarImage src="https://github.com/shadcn.png" />
