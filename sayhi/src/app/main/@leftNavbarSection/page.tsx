@@ -1,7 +1,6 @@
 import LeftNavbar from "@/components/navbar/leftNavbar";
-import { Card } from "@/components/ui/card";
 
-const UsersAnalytics = () => {
+const LeftNavbarSection = () => {
   return (
     <section className="hidden md:flex justify-center bg-neutral-800 py-2 w-15 h-screen">
       <LeftNavbar />
@@ -9,4 +8,4 @@ const UsersAnalytics = () => {
   );
 };
 
-export default UsersAnalytics;
+export default LeftNavbarSection;

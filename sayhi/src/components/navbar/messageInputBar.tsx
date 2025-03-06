@@ -1,16 +1,8 @@
-import {
-  Mic,
-  Paperclip,
-  Phone,
-  Search,
-  SendHorizontal,
-  Smile,
-  Video,
-} from "lucide-react";
+import { Mic, Paperclip, SendHorizontal, Smile } from "lucide-react";
 
 const MessageInputBar = () => {
   return (
-    <div className="flex justify-between items-center bg-neutral-700 border-t border-t-neutral-800 w-[69vw] h-12 text-white">
+    <div className="flex justify-between items-center bg-neutral-700 border-t border-t-neutral-800 w-full h-12 text-white">
       <div className="flex justify-between items-center p-3 w-full h-12">
         <div className="flex items-center gap-5 w-full">
           <div className="hover:shadow-md rounded-full hover:scale-105 cursor-pointer">
