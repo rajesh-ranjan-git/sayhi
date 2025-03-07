@@ -19,7 +19,7 @@ import SettingsContext from "@/components/context/settingsContext";
 
 const LeftNavbar = () => {
   return (
-    <div className="flex flex-col justify-between items-center gap-2 w-full text-white">
+    <div className="flex flex-col justify-between items-center gap-2 w-full h-full text-white">
       <div className="p-1 w-full">
         <div className="flex justify-center items-center py-2 w-full transition-all ease-in-out cursor-pointer">
           <MessageCircle className="text-green-600" size={20} />
