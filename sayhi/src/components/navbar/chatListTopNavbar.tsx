@@ -1,5 +1,11 @@
 import { ListFilter } from "lucide-react";
 import { FaRegEdit } from "react-icons/fa";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import ChatListFilterContext from "@/components/context/chatListFilterContext";
 
 const ChatListTopNavbar = () => {
   return (
@@ -11,9 +17,14 @@ const ChatListTopNavbar = () => {
         <div className="hover:bg-neutral-600 hover:shadow-md p-3 rounded-md cursor-pointer">
           <FaRegEdit size={20} />
         </div>
-        <div className="hover:bg-neutral-600 hover:shadow-md p-3 rounded-md cursor-pointer">
-          <ListFilter size={20} />
-        </div>
+        <Popover>
+          <PopoverTrigger className="hover:bg-neutral-600 hover:shadow-md p-3 rounded-md cursor-pointer">
+            <ListFilter size={20} />
+          </PopoverTrigger>
+          <PopoverContent className="bg-neutral-800 p-0 border-0 rounded-md w-40">
+            <ChatListFilterContext />
+          </PopoverContent>
+        </Popover>
       </div>
     </div>
   );

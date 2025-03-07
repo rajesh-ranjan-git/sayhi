@@ -1,4 +1,10 @@
 import { Mic, Paperclip, SendHorizontal, Smile } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import AttachmentContext from "@/components/context/attachmentContext";
 
 const MessageInputBar = () => {
   return (
@@ -8,9 +14,17 @@ const MessageInputBar = () => {
           <div className="hover:shadow-md rounded-full hover:scale-105 cursor-pointer">
             <Smile size={20} />
           </div>
-          <div className="hover:shadow-md rounded-full hover:scale-105 cursor-pointer">
+          <Popover>
+            <PopoverTrigger className="hover:shadow-md rounded-full hover:scale-105 cursor-pointer">
+              <Paperclip size={20} />
+            </PopoverTrigger>
+            <PopoverContent className="bg-neutral-800 p-0 border-0 rounded-md w-40">
+              <AttachmentContext />
+            </PopoverContent>
+          </Popover>
+          {/* <div className="hover:shadow-md rounded-full hover:scale-105 cursor-pointer">
             <Paperclip size={20} />
-          </div>
+          </div> */}
           <div className="flex flex-col hover:bg-neutral-600 hover:shadow-md px-2 py-1 pr-10 rounded-md w-full cursor-pointer">
             <input
               placeholder="Type a message"
