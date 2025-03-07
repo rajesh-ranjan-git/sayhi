@@ -8,10 +8,6 @@ const ChatList = () => {
         <ChatListItem />
         <ChatListItem />
         <ChatListItem />
-        <ChatListItem />
-        <ChatListItem />
-        <ChatListItem />
-        <ChatListItem />
       </div>
     </div>
   );
