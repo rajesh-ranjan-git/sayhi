@@ -5,7 +5,7 @@ import ChatListSearchbar from "@/components/searchbar/chatListSearchbar";
 
 const ChatListSection = () => {
   return (
-    <section className="bg-neutral-700 border-neutral-800 border-r rounded-tl-lg w-full md:w-[40vw] h-full">
+    <section className="flex flex-col bg-neutral-700 border-neutral-800 border-r rounded-tl-lg w-full h-screen">
       <ChatListTopNavbar />
       <ChatListSearchbar />
       <ChatList />
