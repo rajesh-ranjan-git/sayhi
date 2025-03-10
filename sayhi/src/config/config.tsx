@@ -14,6 +14,14 @@ import {
   File,
   ImageIcon,
   Vote,
+  Bell,
+  CircleHelp,
+  Keyboard,
+  KeyRound,
+  MessageCircleMore,
+  Monitor,
+  Server,
+  Video,
 } from "lucide-react";
 import { TbHistoryToggle } from "react-icons/tb";
 
@@ -128,5 +136,119 @@ export const attachmentOptions = [
     label: "drawing",
     name: "Drawing",
     icon: <Brush size={15} />,
+  },
+];
+
+export const settingsContextOptions = [
+  {
+    id: "general",
+    label: "general",
+    name: "General",
+    icon: <Monitor size={15} />,
+  },
+  {
+    id: "account",
+    label: "account",
+    name: "Account",
+    icon: <KeyRound size={15} />,
+  },
+  {
+    id: "chats",
+    label: "chats",
+    name: "Chats",
+    icon: <MessageCircleMore size={15} />,
+  },
+  {
+    id: "videoAndVoice",
+    label: "videoAndVoice",
+    name: "Video & voice",
+    icon: <Video size={15} />,
+  },
+  {
+    id: "notifications",
+    label: "notifications",
+    name: "Notifications",
+    icon: <Bell size={15} />,
+  },
+  {
+    id: "personalization",
+    label: "personalization",
+    name: "Personalization",
+    icon: <Pencil size={15} />,
+  },
+  {
+    id: "storage",
+    label: "storage",
+    name: "Storage",
+    icon: <Server size={15} />,
+  },
+  {
+    id: "shortcut",
+    label: "shortcut",
+    name: "Shortcut",
+    icon: <Keyboard size={15} />,
+  },
+  {
+    id: "help",
+    label: "help",
+    name: "Help",
+    icon: <CircleHelp size={15} />,
+  },
+];
+
+export const profileContextOptions = [
+  {
+    id: "general",
+    label: "general",
+    name: "General",
+    icon: <Monitor size={15} />,
+  },
+  {
+    id: "account",
+    label: "account",
+    name: "Account",
+    icon: <KeyRound size={15} />,
+  },
+  {
+    id: "chats",
+    label: "chats",
+    name: "Chats",
+    icon: <MessageCircleMore size={15} />,
+  },
+  {
+    id: "videoAndVoice",
+    label: "videoAndVoice",
+    name: "Video & voice",
+    icon: <Video size={15} />,
+  },
+  {
+    id: "notifications",
+    label: "notifications",
+    name: "Notifications",
+    icon: <Bell size={15} />,
+  },
+  {
+    id: "personalization",
+    label: "personalization",
+    name: "Personalization",
+    icon: <Pencil size={15} />,
+  },
+  {
+    id: "storage",
+    label: "storage",
+    name: "Storage",
+    icon: <Server size={15} />,
+  },
+  {
+    id: "shortcut",
+    label: "shortcut",
+    name: "Shortcut",
+    icon: <Keyboard size={15} />,
+  },
+  {
+    id: "help",
+    label: "help",
+    name: "Help",
+    icon: <CircleHelp size={15} />,
   },
 ];
