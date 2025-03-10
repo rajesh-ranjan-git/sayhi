@@ -1,6 +1,8 @@
 import { UserRound } from "lucide-react";
 import { settingsContextOptions } from "@/config/config";
-import SettingsContextRightContent from "@/components/context/settingsContextRightContent";
+import General from "@/components/context/settingsContents/general";
+import Account from "@/components/context/settingsContents/account";
+import Chats from "@/components/context/settingsContents/chats";
 
 const SettingsContext = () => {
   return (
@@ -32,7 +34,9 @@ const SettingsContext = () => {
           </div>
         </div>
       </div>
-      <SettingsContextRightContent />
+      {/* <General /> */}
+      <Account />
+      {/* <Chats /> */}
     </div>
   );
 };

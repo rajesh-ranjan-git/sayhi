@@ -1,6 +1,6 @@
 import { UserRound } from "lucide-react";
 import { profileContextOptions } from "@/config/config";
-import ProfileContextRightContent from "@/components/context/profileContextRightContent";
+import ProfileContextRightContent from "@/components/context/profileContents/profileContextRightContent";
 
 const ProfileContext = () => {
   return (

@@ -72,7 +72,7 @@ const LeftNavbar = () => {
                 </div>
               </div>
             </PopoverTrigger>
-            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] min-h-[50vh]">
+            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md sm:w-[35vw] min-h-[50vh] max-h-[70vh]">
               <SettingsContext />
             </PopoverContent>
           </Popover>
@@ -86,7 +86,7 @@ const LeftNavbar = () => {
                   <AvatarFallback>RR</AvatarFallback>
                 </Avatar>
               </PopoverTrigger>
-              <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] min-h-[50vh]">
+              <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md sm:w-[35vw] min-h-[50vh] max-h-[70vh]">
                 <SettingsContext />
               </PopoverContent>
             </Popover>
