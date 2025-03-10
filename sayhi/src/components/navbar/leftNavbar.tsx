@@ -1,13 +1,4 @@
-import {
-  AlignJustify,
-  Archive,
-  MessageCircle,
-  MessageSquareText,
-  Phone,
-  Settings,
-  Star,
-} from "lucide-react";
-import { TbHistoryToggle } from "react-icons/tb";
+import { AlignJustify, MessageCircle, Settings } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -15,6 +6,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  leftNavbarBottomMenuItems,
+  leftNavbarTopMenuItems,
+} from "@/config/config";
 import SettingsContext from "@/components/context/settingsContext";
 
 const LeftNavbar = () => {
@@ -30,42 +25,41 @@ const LeftNavbar = () => {
             <AlignJustify size={20} />
           </div>
         </div>
-        <div className="hover:bg-neutral-600 rounded-md w-full">
-          <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-            <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-            <MessageSquareText size={20} />
-          </div>
-        </div>
-        <div className="hover:bg-neutral-600 rounded-md w-full">
-          <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-            <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-            <Phone size={20} />
-          </div>
-        </div>
-        <div className="hover:bg-neutral-600 rounded-md w-full">
-          <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-            <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-            <TbHistoryToggle size={20} />
-          </div>
-        </div>
+
+        {leftNavbarTopMenuItems && leftNavbarTopMenuItems.length > 0
+          ? leftNavbarTopMenuItems.map((item) => (
+              <div
+                className="hover:bg-neutral-600 rounded-md w-full"
+                key={item.id}
+              >
+                <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
+                  <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
+                  {item.icon}
+                </div>
+              </div>
+            ))
+          : null}
+
         <div className="p-2">
           <Separator className="bg-neutral-600 w-1/2" />
         </div>
       </div>
       <div>
         <div className="p-1 w-full">
-          <div className="hover:bg-neutral-600 rounded-md w-full">
-            <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-              <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-              <Star size={20} />
-            </div>
-          </div>
-          <div className="hover:bg-neutral-600 rounded-md w-full">
-            <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-              <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-              <Archive size={20} />
-            </div>
-          </div>
+          {leftNavbarBottomMenuItems && leftNavbarBottomMenuItems.length > 0
+            ? leftNavbarBottomMenuItems.map((item) => (
+                <div
+                  className="hover:bg-neutral-600 rounded-md w-full"
+                  key={item.id}
+                >
+                  <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
+                    <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
+                    {item.icon}
+                  </div>
+                </div>
+              ))
+            : null}
+
           <div className="p-2">
             <Separator className="bg-neutral-600 w-1/2" />
           </div>

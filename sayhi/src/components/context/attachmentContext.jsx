@@ -1,17 +1,6 @@
 import Image from "next/image";
-import {
-  Brush,
-  Camera,
-  File,
-  Heart,
-  ImageIcon,
-  MessageSquareDot,
-  Pencil,
-  UserRound,
-  UserRoundX,
-  UsersRound,
-  Vote,
-} from "lucide-react";
+import { Brush, Camera, File, ImageIcon, UserRound, Vote } from "lucide-react";
+import { attachmentOptions } from "@/config/config";
 
 const AttachmentContext = () => {
   return (
@@ -26,42 +15,20 @@ const AttachmentContext = () => {
           />
         </div>
       </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <ImageIcon size={15} />
-          <span>Photos & Videos</span>
-        </div>
-      </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <Camera size={15} />
-          <span>Camera</span>
-        </div>
-      </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <File size={15} />
-          <span>Document</span>
-        </div>
-      </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <UserRound size={15} />
-          <span>Contact</span>
-        </div>
-      </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <Vote size={15} />
-          <span>Poll</span>
-        </div>
-      </div>
-      <div className="hover:bg-neutral-600 rounded-md w-full">
-        <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
-          <Brush size={15} />
-          <span>Drawing</span>
-        </div>
-      </div>
+
+      {attachmentOptions && attachmentOptions.length > 0
+        ? attachmentOptions.map((item) => (
+            <div
+              className="hover:bg-neutral-600 rounded-md w-full"
+              key={item.id}
+            >
+              <div className="flex items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
+                {item.icon}
+                <span>{item.name}</span>
+              </div>
+            </div>
+          ))
+        : null}
     </div>
   );
 };
