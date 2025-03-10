@@ -20,7 +20,7 @@ const MainChatTopNavbar = () => {
                 <AvatarFallback>RR</AvatarFallback>
               </Avatar>
             </PopoverTrigger>
-            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] h-[50vh]">
+            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] min-h-[50vh]">
               <ProfileContext />
             </PopoverContent>
           </Popover>
@@ -32,7 +32,7 @@ const MainChatTopNavbar = () => {
                 <span className="text-muted-foreground text-xs">Online</span>
               </div>
             </PopoverTrigger>
-            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] h-[50vh]">
+            <PopoverContent className="flex bg-neutral-700 p-0 border-0 rounded-md w-[35vw] min-h-[50vh]">
               <ProfileContext />
             </PopoverContent>
           </Popover>
