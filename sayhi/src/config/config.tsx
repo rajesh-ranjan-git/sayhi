@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import {
   Archive,
   MessageSquareText,
@@ -250,5 +251,188 @@ export const profileContextOptions = [
     label: "help",
     name: "Help",
     icon: <CircleHelp size={15} />,
+  },
+];
+
+export const keyboardShortcutOptions = [
+  {
+    id: "newChat",
+    label: "newChat",
+    name: "New chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          N
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "closeChat",
+    label: "closeChat",
+    name: "Close chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          W
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "closeChat2",
+    label: "closeChat",
+    name: "Close chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          F4
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "closeApplication",
+    label: "closeApplication",
+    name: "Close application",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Alt
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          F4
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "newGroup",
+    label: "newGroup",
+    name: "New group",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          N
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "search",
+    label: "search",
+    name: "Search",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          F
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "searchInChat",
+    label: "searchInChat",
+    name: "Search in chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          F
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "profile",
+    label: "profile",
+    name: "Profile",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          P
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "muteChat",
+    label: "muteChat",
+    name: "Mute chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          M
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "toggleRead",
+    label: "toggleRead",
+    name: " Toggle read",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          U
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "emojiPanel",
+    label: "emojiPanel",
+    name: " Emoji panel",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          E
+        </Badge>
+      </span>
+    ),
   },
 ];

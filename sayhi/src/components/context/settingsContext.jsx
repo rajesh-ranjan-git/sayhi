@@ -3,6 +3,10 @@ import { settingsContextOptions } from "@/config/config";
 import General from "@/components/context/settingsContents/general";
 import Account from "@/components/context/settingsContents/account";
 import Chats from "@/components/context/settingsContents/chats";
+import Help from "@/components/context/settingsContents/help";
+import Notifications from "@/components/context/settingsContents/notifications";
+import Profile from "@/components/context/settingsContents/profile";
+import Shortcuts from "@/components/context/settingsContents/shortcuts";
 
 const SettingsContext = () => {
   return (
@@ -35,8 +39,12 @@ const SettingsContext = () => {
         </div>
       </div>
       {/* <General /> */}
-      <Account />
+      {/* <Account /> */}
       {/* <Chats /> */}
+      {/* <Help /> */}
+      {/* <Notifications /> */}
+      {/* <Profile /> */}
+      <Shortcuts />
     </div>
   );
 };
