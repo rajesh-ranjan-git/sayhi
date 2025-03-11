@@ -1,3 +1,5 @@
+"use client";
+
 import { UserRound } from "lucide-react";
 import { settingsContextOptions } from "@/config/config";
 import General from "@/components/context/settingsContents/general";
@@ -41,7 +43,11 @@ const SettingsContext = () => {
           </div>
         </div>
       </div>
-      <div className="bg-neutral-600 rounded-r-md w-[60%] h-full overflow-x-auto">
+      <div
+        className="z-[1000] bg-neutral-600 rounded-r-md w-[60%] h-full overflow-x-auto"
+        onClick={() => console.log("clicked")}
+        onScroll={() => console.log("scrolled")}
+      >
         {/* <General /> */}
         {/* <Account /> */}
         {/* <Chats /> */}

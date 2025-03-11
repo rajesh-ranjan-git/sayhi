@@ -7,45 +7,25 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
   leftNavbarBottomMenuItems,
   leftNavbarTopMenuItems,
 } from "@/config/config";
 import SettingsContext from "@/components/context/settingsContext";
-import LeftNavbarSheet from "./leftNavbarSheet";
 
-const LeftNavbar = () => {
+const LeftNavbarSheet = () => {
   return (
     <div className="flex flex-col justify-between items-center gap-2 w-full h-full text-white">
       <div className="p-1 w-full">
-        <div className="flex justify-center items-center py-2 w-full transition-all ease-in-out cursor-pointer">
+        <div className="flex justify-start items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
           <MessageCircle className="text-green-600" size={20} />
+          <span>SayHi</span>
         </div>
         <div className="hover:bg-neutral-600 rounded-md w-full">
-          <Sheet>
-            <SheetTrigger>
-              <div className="flex items-center gap-2 py-2 w-full active:scale-x-50 transition-all ease-in-out cursor-pointer">
-                <div className="bg-transparent rounded-full w-[2px] h-3"></div>
-                <AlignJustify size={20} />
-              </div>
-            </SheetTrigger>
-            <SheetContent
-              side="left"
-              className="bg-neutral-800 border-0 rounded-r-md w-32"
-            >
-              <SheetHeader className="hidden"></SheetHeader>
-              <SheetTitle className="hidden"></SheetTitle>
-              <SheetDescription className="hidden"></SheetDescription>
-              <LeftNavbarSheet />
-            </SheetContent>
-          </Sheet>
+          <div className="flex items-center gap-2 py-2 w-full active:scale-x-50 transition-all ease-in-out cursor-pointer">
+            <div className="bg-transparent rounded-full w-[2px] h-3"></div>
+            <AlignJustify size={20} />
+            <span>Menu</span>
+          </div>
         </div>
 
         {leftNavbarTopMenuItems && leftNavbarTopMenuItems.length > 0
@@ -55,8 +35,9 @@ const LeftNavbar = () => {
                 key={item.id}
               >
                 <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-                  <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-                  {item.icon}
+                  <div className="flex items-center bg-green-600 rounded-full w-[2px] h-3"></div>
+                  <span>{item.icon}</span>
+                  <span>{item.name}</span>
                 </div>
               </div>
             ))
@@ -66,7 +47,7 @@ const LeftNavbar = () => {
           <Separator className="bg-neutral-600 w-1/2" />
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <div className="p-1 w-full">
           {leftNavbarBottomMenuItems && leftNavbarBottomMenuItems.length > 0
             ? leftNavbarBottomMenuItems.map((item) => (
@@ -75,8 +56,9 @@ const LeftNavbar = () => {
                   key={item.id}
                 >
                   <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
-                    <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
-                    {item.icon}
+                    <div className="flex items-center bg-green-600 rounded-full w-[2px] h-3"></div>
+                    <span>{item.icon}</span>
+                    <span>{item.name}</span>
                   </div>
                 </div>
               ))
@@ -87,10 +69,11 @@ const LeftNavbar = () => {
           </div>
           <Popover>
             <PopoverTrigger className="w-full cursor-pointer">
-              <div className="hover:bg-neutral-600 rounded-md w-full">
+              <div className="flex justify-start items-center hover:bg-neutral-600 rounded-md w-full">
                 <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
                   <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
                   <Settings size={20} />
+                  <span>Settings</span>
                 </div>
               </div>
             </PopoverTrigger>
@@ -119,4 +102,4 @@ const LeftNavbar = () => {
   );
 };
 
-export default LeftNavbar;
+export default LeftNavbarSheet;
