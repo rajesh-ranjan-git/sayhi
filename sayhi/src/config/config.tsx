@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Archive,
   MessageSquareText,
@@ -434,5 +435,95 @@ export const keyboardShortcutOptions = [
         </Badge>
       </span>
     ),
+  },
+];
+
+export const storageOptions = [
+  {
+    id: "photos",
+    label: "photos",
+    name: "Photos",
+  },
+  {
+    id: "audio",
+    label: "audio",
+    name: "Audio",
+  },
+  {
+    id: "videos",
+    label: "videos",
+    name: "Videos",
+  },
+  {
+    id: "documents",
+    label: "documents",
+    name: "Documents",
+  },
+];
+
+export const chatWallpaperOptions = [
+  {
+    id: "grey",
+    color: "bg-neutral-700",
+  },
+  {
+    id: "#a7afeb",
+    color: "bg-[#a7afeb]",
+  },
+  {
+    id: "#d405da",
+    color: "bg-[#d405da]",
+  },
+  {
+    id: "#e0cbe3",
+    color: "bg-[#e0cbe3]",
+  },
+  {
+    id: "#6a8aa1",
+    color: "bg-[#6a8aa1]",
+  },
+  {
+    id: "#768a03",
+    color: "bg-[#768a03]",
+  },
+  {
+    id: "#dede6a",
+    color: "bg-[#dede6a]",
+  },
+  {
+    id: "#11ee7a",
+    color: "bg-[#11ee7a]",
+  },
+  {
+    id: "#ad3b93",
+    color: "bg-[#ad3b93]",
+  },
+  {
+    id: "#cd76cf",
+    color: "bg-[#cd76cf]",
+  },
+  {
+    id: "#a0130d",
+    color: "bg-[#a0130d]",
+  },
+  {
+    id: "#014c64",
+    color: "bg-[#014c64]",
+  },
+  {
+    id: "#da440c",
+    color: "bg-[#da440c]",
+  },
+  {
+    id: "#2c288a",
+    color: "bg-[#2c288a]",
+  },
+  {
+    id: "#a0aae1",
+    color: "bg-[#a0aae1]",
+  },
+  {
+    id: "#f904d7",
+    color: "bg-[#f904d7]",
   },
 ];

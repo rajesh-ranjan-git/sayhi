@@ -3,10 +3,13 @@ import { settingsContextOptions } from "@/config/config";
 import General from "@/components/context/settingsContents/general";
 import Account from "@/components/context/settingsContents/account";
 import Chats from "@/components/context/settingsContents/chats";
-import Help from "@/components/context/settingsContents/help";
+import VideoAndVoice from "@/components/context/settingsContents/videoAndVoice";
 import Notifications from "@/components/context/settingsContents/notifications";
-import Profile from "@/components/context/settingsContents/profile";
+import Personalization from "@/components/context/settingsContents/personalization";
+import Storage from "@/components/context/settingsContents/storage";
 import Shortcuts from "@/components/context/settingsContents/shortcuts";
+import Help from "@/components/context/settingsContents/help";
+import Profile from "@/components/context/settingsContents/profile";
 
 const SettingsContext = () => {
   return (
@@ -41,10 +44,13 @@ const SettingsContext = () => {
       {/* <General /> */}
       {/* <Account /> */}
       {/* <Chats /> */}
-      {/* <Help /> */}
+      {/* <VideoAndVoice /> */}
       {/* <Notifications /> */}
+      <Personalization />
+      {/* <Storage /> */}
+      {/* <Shortcuts /> */}
+      {/* <Help /> */}
       {/* <Profile /> */}
-      <Shortcuts />
     </div>
   );
 };
