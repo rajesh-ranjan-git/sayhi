@@ -1,4 +1,6 @@
+import { Badge } from "@/components/ui/badge";
 import { keyboardShortcutOptions } from "@/config/config";
+import { ArrowRight, Equal } from "lucide-react";
 
 const Shortcuts = () => {
   return (
@@ -17,6 +19,45 @@ const Shortcuts = () => {
               </div>
             ))
           : null}
+      </div>
+      <div className="flex flex-col gap-2 py-2">
+        <p>Quick emojis</p>
+        <span className="text-xs">
+          When typing a message, use the colon symbol to quickly search and
+          access Emojis in-line.
+        </span>
+        <div className="flex justify-between items-center gap-2">
+          <span>Cat</span>
+          <div className="flex justify-between items-center gap-5">
+            <Badge variant="outline" className="text-neutral-300">
+              {":"}
+            </Badge>
+            <ArrowRight />
+            <Badge variant="outline" className="w-6 text-neutral-300">
+              :cat
+            </Badge>
+            <Equal />
+            <Badge variant="outline" className="w-6 text-neutral-300">
+              🐱
+            </Badge>
+          </div>
+        </div>
+        <div className="flex justify-between items-center gap-2">
+          <span>Hat</span>{" "}
+          <div className="flex justify-between items-center gap-5">
+            <Badge variant="outline" className="text-neutral-300">
+              {":"}
+            </Badge>
+            <ArrowRight />
+            <Badge variant="outline" className="w-6 text-neutral-300">
+              :hat
+            </Badge>
+            <Equal />
+            <Badge variant="outline" className="w-6 text-neutral-300">
+              🎩
+            </Badge>
+          </div>
+        </div>
       </div>
     </div>
   );

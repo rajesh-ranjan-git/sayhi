@@ -24,6 +24,7 @@ import {
   Monitor,
   Server,
   Video,
+  ArrowUp,
 } from "lucide-react";
 import { TbHistoryToggle } from "react-icons/tb";
 
@@ -403,7 +404,7 @@ export const keyboardShortcutOptions = [
   {
     id: "toggleRead",
     label: "toggleRead",
-    name: " Toggle read",
+    name: "Toggle read",
     key: (
       <span className="flex gap-2">
         <Badge variant="outline" className="text-neutral-300">
@@ -421,7 +422,7 @@ export const keyboardShortcutOptions = [
   {
     id: "emojiPanel",
     label: "emojiPanel",
-    name: " Emoji panel",
+    name: "Emoji panel",
     key: (
       <span className="flex gap-2">
         <Badge variant="outline" className="text-neutral-300">
@@ -432,6 +433,186 @@ export const keyboardShortcutOptions = [
         </Badge>
         <Badge variant="outline" className="w-6 text-neutral-300">
           E
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "gifPanel",
+    label: "gifPanel",
+    name: "Gif panel",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          G
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "stickerPanel",
+    label: "stickerPanel",
+    name: "Sticker panel",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          S
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "previousChat",
+    label: "previousChat",
+    name: "Previous chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          {"["}
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "nextChat",
+    label: "nextChat",
+    name: "Next chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          {"]"}
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "previousChat2",
+    label: "previousChat",
+    name: "Previous chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          Shift
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          Tab
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "nextChat2",
+    label: "nextChat",
+    name: "Next chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          Tab
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "openChat",
+    label: "openChat",
+    name: "Open chat",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="w-6 text-neutral-300">
+          1..9
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "editLastMessage",
+    label: "editLastMessage",
+    name: "Edit last message",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          <ArrowUp size={16} />
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "decreaseTextSize",
+    label: "decreaseTextSize",
+    name: "Decrease text size",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          -
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "increaseTextSize",
+    label: "increaseTextSize",
+    name: "Increase text size",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          +
+        </Badge>
+      </span>
+    ),
+  },
+  {
+    id: "resetTextSize",
+    label: "resetTextSize",
+    name: "Reset text size",
+    key: (
+      <span className="flex gap-2">
+        <Badge variant="outline" className="text-neutral-300">
+          Ctrl
+        </Badge>
+        <Badge variant="outline" className="text-neutral-300">
+          0
         </Badge>
       </span>
     ),

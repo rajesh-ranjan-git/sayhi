@@ -45,11 +45,11 @@ const SettingsContext = () => {
         {/* <General /> */}
         {/* <Account /> */}
         {/* <Chats /> */}
-        <VideoAndVoice />
+        {/* <VideoAndVoice /> */}
         {/* <Notifications /> */}
         {/* <Personalization /> */}
         {/* <Storage /> */}
-        {/* <Shortcuts /> */}
+        <Shortcuts />
         {/* <Help /> */}
         {/* <Profile /> */}
       </div>
