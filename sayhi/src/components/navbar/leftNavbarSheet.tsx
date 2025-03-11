@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { AlignJustify, MessageCircle, Settings } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
@@ -13,10 +16,15 @@ import {
 import SettingsContext from "@/components/context/settingsContext";
 
 const LeftNavbarSheet = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col justify-between items-center gap-2 w-full h-full text-white">
       <div className="p-1 w-full">
-        <div className="flex justify-start items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer">
+        <div
+          className="flex justify-start items-center gap-2 p-2 w-full transition-all ease-in-out cursor-pointer"
+          onClick={() => router.push("/main")}
+        >
           <MessageCircle className="text-green-600" size={20} />
           <span>SayHi</span>
         </div>
