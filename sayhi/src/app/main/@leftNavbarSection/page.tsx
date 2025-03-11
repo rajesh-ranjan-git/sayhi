@@ -1,7 +1,7 @@
 "use client";
 
-import LeftNavbar from "@/components/navbar/leftNavbar";
 import { useState } from "react";
+import LeftNavbar from "@/components/navbar/leftNavbar";
 
 const LeftNavbarSection = () => {
   const [leftNavToggle, setLeftNavToggle] = useState(null);

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { RiEnglishInput } from "react-icons/ri";
 import { Globe, IndianRupee, Languages } from "lucide-react";
+import { RiEnglishInput } from "react-icons/ri";
 import {
   Select,
   SelectContent,

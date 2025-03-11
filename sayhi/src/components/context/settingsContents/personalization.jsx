@@ -8,9 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { chatWallpaperOptions } from "@/config/config";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { chatWallpaperOptions } from "@/config/config";
 
 const Personalization = () => {
   return (

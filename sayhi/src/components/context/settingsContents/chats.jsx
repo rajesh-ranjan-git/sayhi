@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { TabletSmartphone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Chats = () => {
   return (

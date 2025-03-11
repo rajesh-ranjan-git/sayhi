@@ -1,6 +1,6 @@
+import { ArrowRight, Equal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { keyboardShortcutOptions } from "@/config/config";
-import { ArrowRight, Equal } from "lucide-react";
 
 const Shortcuts = () => {
   return (

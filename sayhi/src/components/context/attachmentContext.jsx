@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Brush, Camera, File, ImageIcon, UserRound, Vote } from "lucide-react";
 import { attachmentOptions } from "@/config/config";
 
 const AttachmentContext = () => {

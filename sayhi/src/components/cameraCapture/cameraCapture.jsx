@@ -1,5 +1,5 @@
-import Webcam from "react-webcam";
 import { useCallback, useEffect, useState } from "react";
+import Webcam from "react-webcam";
 
 const CameraCapture = () => {
   const [deviceId, setDeviceId] = useState({});
