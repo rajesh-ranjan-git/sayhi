@@ -13,7 +13,7 @@ import CameraCapture from "@/components/cameraCapture/cameraCapture";
 
 const VideoAndVoice = () => {
   return (
-    <div className="flex flex-col gap-1 bg-neutral-600 p-3 rounded-r-md w-[60%] h-full text-white">
+    <div className="flex flex-col gap-1 p-3 rounded-r-md w-full h-full text-white">
       <h2 className="font-semibold">Video & Voice</h2>
       <div className="flex flex-col gap-2 py-2">
         <p>Video</p>
@@ -43,7 +43,7 @@ const VideoAndVoice = () => {
           </SelectContent>
         </Select>
       </div>
-      <div className="rounded-md w-full h-60 overflow-hidden">
+      <div className="rounded-md w-full min-h-40 overflow-hidden">
         <CameraCapture />
       </div>
       <div className="flex flex-col gap-2 py-2">

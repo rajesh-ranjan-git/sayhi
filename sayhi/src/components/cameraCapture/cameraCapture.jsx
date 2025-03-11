@@ -18,12 +18,13 @@ const CameraCapture = () => {
   return (
     <>
       {devices.map((device, key) => (
-        <div key={key}>
+        <div key={key} className="rounded-md">
           <Webcam
             audio={false}
             videoConstraints={{ deviceId: device.deviceId }}
+            className="rounded-md"
           />
-          {device.label || `Device ${key + 1}`}
+          {/* {device.label || `Device ${key + 1}`} */}
         </div>
       ))}
     </>

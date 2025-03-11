@@ -41,16 +41,18 @@ const SettingsContext = () => {
           </div>
         </div>
       </div>
-      {/* <General /> */}
-      {/* <Account /> */}
-      {/* <Chats /> */}
-      {/* <VideoAndVoice /> */}
-      {/* <Notifications /> */}
-      <Personalization />
-      {/* <Storage /> */}
-      {/* <Shortcuts /> */}
-      {/* <Help /> */}
-      {/* <Profile /> */}
+      <div className="bg-neutral-600 rounded-r-md w-[60%] h-full overflow-x-auto">
+        {/* <General /> */}
+        {/* <Account /> */}
+        {/* <Chats /> */}
+        <VideoAndVoice />
+        {/* <Notifications /> */}
+        {/* <Personalization /> */}
+        {/* <Storage /> */}
+        {/* <Shortcuts /> */}
+        {/* <Help /> */}
+        {/* <Profile /> */}
+      </div>
     </div>
   );
 };

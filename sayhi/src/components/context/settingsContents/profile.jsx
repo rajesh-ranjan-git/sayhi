@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col gap-1 bg-neutral-600 p-3 rounded-r-md w-[60%] h-full text-white">
+    <div className="flex flex-col gap-1 p-3 rounded-r-md w-full h-full text-white">
       <div className="rounded-full w-20 h-20 overflow-hidden">
         <Image
           src="/images/latest_pic.png"

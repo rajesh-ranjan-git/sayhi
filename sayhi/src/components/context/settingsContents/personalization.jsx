@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 
 const Personalization = () => {
   return (
-    <div className="flex flex-col gap-1 bg-neutral-600 p-3 rounded-r-md w-[60%] h-full text-white">
+    <div className="flex flex-col gap-1 p-3 rounded-r-md w-full h-full text-white">
       <h2 className="font-semibold">Personalization</h2>
       <div className="flex flex-col gap-2 py-2">
         <p>Theme</p>
