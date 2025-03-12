@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const EmptyMain = () => {
+const EmptyChat = () => {
   return (
     <section className="hidden sm:flex flex-col bg-neutral-700 w-full h-screen">
       <div className="flex-1 border-neutral-800 border-b w-full h-full g-neutral-500">
@@ -20,4 +20,4 @@ const EmptyMain = () => {
   );
 };
 
-export default EmptyMain;
+export default EmptyChat;
