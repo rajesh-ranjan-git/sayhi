@@ -61,6 +61,7 @@ const LeftNavbar = () => {
               <div
                 className="hover:bg-neutral-600 rounded-md w-full"
                 key={item.id}
+                onClick={() => router.push(item.path)}
               >
                 <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
                   <div className="bg-green-600 rounded-full w-[2px] h-3"></div>
@@ -81,6 +82,7 @@ const LeftNavbar = () => {
                 <div
                   className="hover:bg-neutral-600 rounded-md w-full"
                   key={item.id}
+                  onClick={() => router.push(item.path)}
                 >
                   <div className="flex items-center gap-2 py-2 w-full transition-all ease-in-out cursor-pointer">
                     <div className="bg-green-600 rounded-full w-[2px] h-3"></div>

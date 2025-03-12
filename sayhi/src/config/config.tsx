@@ -33,18 +33,21 @@ export const leftNavbarTopMenuItems = [
     label: "chat",
     name: "Chat",
     icon: <MessageSquareText size={20} />,
+    path: "/main/chatSection",
   },
   {
     id: "phone",
     label: "phone",
     name: "Phone",
     icon: <Phone size={20} />,
+    path: "/main/callSection",
   },
   {
     id: "status",
     label: "status",
     name: "Status",
     icon: <TbHistoryToggle size={20} />,
+    path: "/main/statusSection",
   },
 ];
 
@@ -54,12 +57,14 @@ export const leftNavbarBottomMenuItems = [
     label: "starred",
     name: "Starred",
     icon: <Star size={20} />,
+    path: "/main/starredSection",
   },
   {
     id: "archived",
     label: "archived",
     name: "Archived",
     icon: <Archive size={20} />,
+    path: "/main/archivedSection",
   },
 ];
 
