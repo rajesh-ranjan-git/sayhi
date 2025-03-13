@@ -26,7 +26,7 @@ const ProfileContextRightContent = () => {
       </div>
       <div className="flex flex-col gap-2 py-2">
         <p>Language</p>
-        <Select className="border-0">
+        <Select>
           <SelectTrigger className="bg-neutral-500 border-0 w-48 data-[placeholder]:text-neutral-200">
             <SelectValue placeholder="Choose Language" className="text-white" />
           </SelectTrigger>
