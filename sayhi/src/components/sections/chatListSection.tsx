@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ChatList from "@/components/chat/chatList";
 import BottomNavbar from "@/components/navbar/bottomNavbar";
 import ChatListTopNavbar from "@/components/navbar/chatListTopNavbar";
 import ChatListSearchbar from "@/components/searchbar/chatListSearchbar";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 const ChatListSection = () => {
   const router = useRouter();

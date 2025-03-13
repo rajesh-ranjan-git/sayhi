@@ -1,7 +1,7 @@
 import ChatList from "@/components/chat/chatList";
 import BottomNavbar from "@/components/navbar/bottomNavbar";
 import StarredListTopNavbar from "@/components/navbar/starredListTopNavbar";
-import StarredListSearchbar from "../searchbar/starredListSearchbar";
+import StarredListSearchbar from "@/components/searchbar/starredListSearchbar";
 
 const StarredListSection = () => {
   return (

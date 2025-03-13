@@ -1,5 +1,4 @@
 import CallListItem from "@/components/call/callListItem";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const CallList = () => {
   return (

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import {
   Archive,
   MessageSquareText,
@@ -26,6 +25,7 @@ import {
   ArrowUp,
 } from "lucide-react";
 import { TbHistoryToggle } from "react-icons/tb";
+import { Badge } from "@/components/ui/badge";
 
 export const leftNavbarTopMenuItems = [
   {
